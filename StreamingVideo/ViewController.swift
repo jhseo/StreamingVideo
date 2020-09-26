@@ -7,11 +7,27 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var urlTextField: UITextField!
 
+    @IBAction func playButtonPressed(_ sender: Any) {
+        guard
+            let videoUrlString = urlTextField.text,
+            let videoUrl = URL(string: videoUrlString)
+        else { return }
+        
+        let playerViewController = AVPlayerViewController()
+        let player = AVPlayer(url: videoUrl)
+        playerViewController.player = player
+
+        present(playerViewController, animated: true) {
+          player.play()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
