@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var urlTextField: UITextField!
 
+    let videoURLString =
+    "https://wolverine.raywenderlich.com/content/ios/tutorials/video_streaming/foxVillage.mp4"
+    let hlsVideUrlString = "https://wolverine.raywenderlich.com/content/ios/tutorials/video_streaming/foxVillage.m3u8"
+    
     @IBAction func playButtonPressed(_ sender: Any) {
         guard
             let videoUrlString = urlTextField.text,
