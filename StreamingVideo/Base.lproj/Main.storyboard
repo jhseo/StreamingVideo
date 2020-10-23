@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="in9-Aw-Re8">
-                                <rect key="frame" x="20" y="387" width="374" height="122.5"/>
+                                <rect key="frame" x="20" y="369.5" width="374" height="157.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h6g-jV-dKc">
                                         <rect key="frame" x="37" y="0.0" width="300" height="62.5"/>
@@ -37,27 +37,54 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbq-yO-cax">
-                                        <rect key="frame" x="137" y="92.5" width="100" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="4tJ-pr-1ya"/>
-                                        </constraints>
-                                        <state key="normal" title="Play">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TfY-dq-L55"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C6k-sy-mKn">
+                                        <rect key="frame" x="137" y="92.5" width="100" height="65"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbq-yO-cax">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4tJ-pr-1ya"/>
+                                                </constraints>
+                                                <state key="normal" title="Play">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TfY-dq-L55"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-U3-f1w">
+                                                <rect key="frame" x="0.0" y="35" width="100" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="VaN-uQ-zhc"/>
+                                                </constraints>
+                                                <state key="normal" title="Play sample">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyJ-Wd-D8X"/>
+                                                    <action selector="playSampleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RG2-LK-u04"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="29a-NV-IOW" customClass="VideoPlayerView" customModule="StreamingVideo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="29a-NV-IOW" secondAttribute="trailing" id="8G9-U8-Ir7"/>
+                            <constraint firstItem="29a-NV-IOW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8ur-qv-AAQ"/>
+                            <constraint firstItem="29a-NV-IOW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QXS-5y-Dip"/>
                             <constraint firstItem="in9-Aw-Re8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ZBR-f1-Sn0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="in9-Aw-Re8" secondAttribute="trailing" constant="20" id="kgh-Ce-Fa4"/>
+                            <constraint firstAttribute="bottom" secondItem="29a-NV-IOW" secondAttribute="bottom" id="pii-5n-dtb"/>
                             <constraint firstItem="in9-Aw-Re8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tBe-wf-5bN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="urlTextField" destination="0xx-va-tku" id="gsY-OK-zlk"/>
+                        <outlet property="videoView" destination="29a-NV-IOW" id="fQQ-k1-kGv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
